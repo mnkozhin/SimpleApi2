@@ -80,14 +80,14 @@ export default class App extends Component<{}> {
           label="Показывать Дату"
           size="large"
           isOn={this.state.isDate}
-          labelStyle={{color: 'black', fontSize: 20, fontWeight: '900'}}
+          labelStyle={styles.labelStyle}
           onToggle={isDate => {
             this.onToggleD(isDate);
           }}
         />
         <ToggleSwitch
           label="Показывать время"
-          labelStyle={{color: 'black', fontSize: 20, fontWeight: '900'}}
+          labelStyle={styles.labelStyle}
           size="large"
           isOn={this.state.isTime}
           onToggle={isTime => {
@@ -96,7 +96,7 @@ export default class App extends Component<{}> {
         />
         <ToggleSwitch
           label="Показывать время суток"
-          labelStyle={{color: 'black', fontSize: 20, fontWeight: '900'}}
+          labelStyle={styles.labelStyle}
           size="large"
           isOn={this.state.istimeofDay}
           onToggle={istimeofDay => {
@@ -109,6 +109,11 @@ export default class App extends Component<{}> {
 }
 
 const styles = StyleSheet.create({
+  labelStyle: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: '900',
+  },
   container: {
     flex: 1,
     padding: 20,
