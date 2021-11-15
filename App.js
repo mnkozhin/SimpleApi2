@@ -23,7 +23,7 @@ export default class App extends Component<{}> {
   
   componentDidMount() {
     console.log("componentDidMount  " );
-    json=this.getTimes()
+    this.getTimes()
    
   
   }
@@ -33,7 +33,7 @@ export default class App extends Component<{}> {
     
     //console.log( 'http://13.53.184.93:3000/current_day?date='+this.state.isDate+'&time='+this.state.isTime+'&timeOfday='+this.state.istimeofDay)
 
-    return fetch('http://13.53.184.93:3000/current_day?date='+this.state.isDate+'&time='+this.state.isTime+'&timeOfday='+this.state.istimeofDay)
+    return fetch('http://10.75.181.245:3000/current_day?date='+this.state.isDate+'&time='+this.state.isTime+'&timeOfday='+this.state.istimeofDay)
       .then((response) => response.json())
       .then((json) => {
        
@@ -60,7 +60,7 @@ export default class App extends Component<{}> {
   
    this.setState({ isDate: isOn}, function () {
     this.getTimes()
-    this.render()
+    //this.render()
 })
 
   }
@@ -69,7 +69,7 @@ export default class App extends Component<{}> {
     
     this.setState({ isTime: isOn}, function () {
      this.getTimes()
-     this.render()
+     //this.render()
  })
    
    }
@@ -78,14 +78,14 @@ export default class App extends Component<{}> {
    
     this.setState({ istimeofDay: isOn}, function () {
       this.getTimes()
-      this.render()
+      //this.render()
   })
     
   }
 
   render() {
     return (
-      <View style={[styles.container,  {flexDirection: "column" }]}>
+      <View style={[styles.container, {flexDirection: "column" }]}>
       <Text style={styles.bigBlack}>Дата на сервере: {this.state.date}</Text>
       <Text style={styles.bigBlack}>Время на сервере: {this.state.time} </Text>
       <Text style={styles.bigBlack}>Время суток на сервере: {this.state.timeOfday}</Text>
@@ -97,7 +97,7 @@ export default class App extends Component<{}> {
           isOn={this.state.isDate}
           labelStyle={{ color: "black",fontSize: 20, fontWeight: "900" }}
           onToggle={isDate => {
-            this.setState({ isDate });
+            //this.setState({ isDate });
             this.onToggleD(isDate);
           }}
         />
@@ -107,7 +107,7 @@ export default class App extends Component<{}> {
           size="large"
           isOn={this.state.isTime}
           onToggle={isTime => {
-            this.setState({ isTime });
+            //this.setState({ isTime });
             this.onToggleT(isTime);
           }}
         />
@@ -117,7 +117,7 @@ export default class App extends Component<{}> {
           size="large"
           isOn={this.state.istimeofDay}
           onToggle={istimeofDay => {
-            this.setState({ istimeofDay });
+            //this.setState({ istimeofDay });
             this.onToggleTO(istimeofDay);
           }}
         />
